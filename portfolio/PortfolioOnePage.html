@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio - Chloé Greffier</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;400;600;700&display=swap');
+
+body{margin:0;font-family:'Inter',sans-serif;background:#000;color:#fff;}
+
+nav{position:fixed;top:0;width:100%;background:#000;display:flex;justify-content:center;align-items:center;padding:15px 30px;z-index:1000;border-bottom:1px solid #222;}
+nav img{height:40px;margin-right:20px;}
+.nav-links{display:flex;align-items:center;gap:25px;}
+.nav-links a{color:#fff;text-decoration:none;font-weight:600;transition:0.3s;}
+.nav-links a:hover{color:#ffd633;text-shadow:0 0 8px #ffd633;}
+
+header{padding:120px 10% 40px;display:flex;justify-content:space-between;align-items:center;}
+.header-text h1{font-family:'Press Start 2P';font-size:44px;color:#4da6ff;}
+.header-text p{font-size:18px;color:#ff4da6;font-weight:600;line-height:1.4;}
+.profile-pic{width:180px;height:180px;border-radius:50%;border:5px solid #ffd633;object-fit:cover;}
+
+section{padding:60px 10%;position:relative;}
+h2{font-size:30px;color:#ffd633;font-family:'Press Start 2P';}
+
+.section-pacman{position:absolute;top:-40px;left:0;width:100%;height:60px;pointer-events:none;}
+.pacman{position:absolute;width:50px;height:50px;background:yellow;border-radius:50%;animation:movePacman 10s linear infinite;}
+.pacman::before{content:"";position:absolute;width:100%;height:100%;background:#000;clip-path:polygon(50% 50%,100% 0%,100% 100%);animation:mouth 0.3s infinite;}
+.dot{position:absolute;width:6px;height:6px;background:white;border-radius:50%;top:22px;}
+.dot:nth-child(2){left:10%;}
+.dot:nth-child(3){left:25%;}
+.dot:nth-child(4){left:40%;}
+.dot:nth-child(5){left:55%;}
+.dot:nth-child(6){left:70%;}
+.dot:nth-child(7){left:85%;}
+
+@keyframes movePacman{0%{left:-60px;}100%{left:100%;}}
+@keyframes mouth{0%{clip-path:polygon(50% 50%,100% 0%,100% 100%);}50%{clip-path:polygon(50% 50%,100% 40%,100% 60%);}100%{clip-path:polygon(50% 50%,100% 0%,100% 100%);}}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;margin-top:30px;}
+.card{background:#fff;color:#000;padding:20px;border-radius:10px;position:relative;}
+.tag{position:absolute;top:10px;right:10px;background:#ff4da6;color:white;padding:5px 10px;border-radius:5px;font-size:12px;}
+.skill li{list-style:none;margin:5px 0;}
+.skill li::before{content:"●";color:#ff4da6;margin-right:8px;}
+footer{margin-top:40px;background:#111;text-align:center;padding:20px;}
+.photo-gallery{display:flex;gap:20px;overflow:hidden;}
+.photo-gallery img{width:250px;height:250px;object-fit:contain;border:2px solid #ffd633;border-radius:10px;}
+
+/* Galerie défilante automatique simple */
+.photo-gallery {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #ffd633;
+}
+
+.photo-gallery .slide-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: slide 50s linear infinite; /* 50s = durée totale du défilement */
+}
+
+.photo-gallery img {
+  width: 480px;
+  height: 270px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* Animation de défilement */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* ajuste selon la longueur de tes images */
+}
+</style>
+<link rel="icon" type="image/png" href="logo.png">
+</head>
+
+
+<body>
+
+<nav>
+<img src="logo.png">
+<div class="nav-links">
+<a href="#accueil">Accueil</a>
+<a href="#formation">Formation</a>
+<a href="#competences">Compétences</a>
+<a href="#projets">Projets</a>
+<a href="#photos">Activitées</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<header id="accueil">
+<div class="header-text">
+<h1><a style="color:#4da6ff;" href="#contact">CHLOÉ GREFFIER</a></h1>
+<p>Etudiante a l'IUT d'orsay - Universite Paris-Saclay <br>J'aime apprendre, résoudre des problèmes et développer mes compétences.</p>
+</div>
+<img src="photo.png" class="profile-pic">
+</header>
+
+<section id="formation">
+<div class="section-pacman">
+<div class="pacman"></div>
+<div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+</div>
+<h2>Formation</h2>
+<div class="grid">
+<div class="card">
+<p><b>BUT Informatique – IUT d’Orsay</b><br>Depuis septembre 2025<br><b>Parcours prevu en BUT2 : </b> Réalisation d'Applications (conception, architecture, développement, tests et déploiement) </p>
+</div>
+<div class="card">
+<p><b>Baccalauréat général – Lycée de la Vallée de Chevreuse</b><br>2022 - 2025<br>Mention Bien<br><b>Spécialités :</b> Mathématiques et NSI</p>
+</div>
+</div>
+</section>
+
+<section id="competences">
+<h2>Compétences</h2>
+<div class="grid">
+<div class="card"><h3>Web</h3><ul class="skill">
+<li>HTML ★★★★★</li>
+<li>CSS ★★★★★</li>
+<li>JavaScript ★★☆☆☆</li>
+<li>Angular ★★☆☆☆</li>
+</ul></div>
+<div class="card"><h3>Langages</h3><ul class="skill">
+<li>Python (pygame, pyxel) ★★★★★</li>
+<li>C++ ★★★★★</li>
+<li>Java (swing) ★★★★★</li>
+<li>Godot ★★☆☆☆</li>
+</ul></div>
+<div class="card"><h3>Base de données</h3><ul class="skill">
+<li>MySQL ★★★★☆</li>
+<li>Oracle ★★★★★</li>
+</ul></div>
+<div class="card"><h3>Outils</h3><ul class="skill">
+<li>Linux ★★★☆☆</li>
+<li>Git ★★★★★</li>
+</ul></div>
+</div>
+</section>
+
+<section id="projets">
+<div class="section-pacman">
+<div class="pacman"></div>
+<div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+</div>
+<h2>Projets</h2>
+<div class="grid">
+<div class="card"><div class="tag">HTML CSS</div>
+<h3><a style="color:#000000;" href = "https://github.com/ChloeGREFFIER/CheapKiriTourism">Site agence de voyage</a></h3>
+<p>Projet en groupe de 3 : création d’une agence fictive puis développement du site web.</p></div>
+<div class="card"><div class="tag">HTML CSS JS</div>
+<h3>Jeu enfant</h3>
+<p>Jeu de calcul mental sur le thème de la mer en groupe de 3.</p></div>
+<div class="card"><div class="tag">Python Pyxel</div>
+<h3 style="color:#ff4da6;">★ Nuit du Code 2025</h3>
+<p>Concour collaboratif de création de jeu en groupe de 4.</p></div>
+<div class="card"><div class="tag">Python Pygame</div>
+<h3>Space Invaders</h3>
+<p>Recréation du jeu en groupe de 2.</p></div>
+<div class="card"><div class="tag">Python Pygame</div>
+<h3>Pac-Man</h3>
+<p>J'ai ete amené dans le cadre de mon grand oral (qui portais sur l'utilisation d'algorithmes de pathfinding dans Pacman) a créer une version simplifié de PacMan.</p></div>
+<div class="card"><div class="tag">Python Pygame</div>
+<h3>Jeu de la vie</h3>
+<p>Implémentation du modèle cellulaire.</p></div>
+<div class="card"><div class="tag">C++</div>
+<h3><a style="color:#000000;" href ="https://github.com/ChloeGREFFIER/projet_S102_dev">Jeu 2D</a></h3>
+<p>Ce projet consistais a avec l'aide de l'ennoncé du projet creer un jeu simple. Le personnage peut se deplacer, recolter des pieces, perdre des vies lorsqu'il rentre dans un enemis lors des deplacements automatiques de celui-ci </p></div>
+<div class="card"><div class="tag">Godot</div>
+<h3 style="color:#ff4da6;"><a style="color:#ff4da6;" href="https://astral-panda.itch.io/the-amazing-adventure-of-ubuntu-cheval-click-edition">★ Code Game Jam 2026</a></h3>
+<p>Participation à la Game Jam avec création d’un jeu en équipe de 5.</p></div>
+<div class="card"><div class="tag">Java Swing</div>
+<h3>Developpement d'application</h3>
+<p>Conception et implémentation d’une application pour le suivi et l’organisation de médias </p></div>
+<div class="card"><div class="tag">Oracle</div>
+<h3><a style="color:#000000;" href ="https://github.com/ChloeGREFFIER/S104-BaseDeDonnee-Entreprise-">Bases de données - Oracle</a></h3>
+<p>Création et gestion d'une base de donnée pour une entreprise apres une etude des besoins de celle-ci.</p></div>
+</div>
+</section>
+
+<section id="photos">
+<div class="section-pacman">
+<div class="pacman"></div>
+<div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+</div>
+  <h2>Mes Activitées et motivations</h2>
+  <p>En dehors de l’informatique, je suis passionnée par :</p>
+  <ul>
+    <li>Musique : guitare, chant</li>
+    <li>Dessin</li>
+    <li>Photographie</li>
+    <li>Jeux vidéo : indé, horreur, coop</li>
+  </ul>
+
+  <div class="photo-gallery">
+    <div class="slide-track">
+      <img src="1.png" alt="page 1">
+      <img src="2.png" alt="page 2">
+      <img src="3.png" alt="page 3">
+      <img src="4.png" alt="page 4">
+      <img src="5.png" alt="page 5">
+      <img src="6.png" alt="Page 6">
+      <img src="7.png" alt="Page 7">
+      <img src="8.png" alt="Page 8">
+
+      <!-- On répète les images pour que le défilement soit infini -->
+      <img src="1.png" alt="page 1">
+      <img src="2.png" alt="page 2">
+      <img src="3.png" alt="page 3">
+      <img src="4.png" alt="page 4">
+      <img src="5.png" alt="page 5">
+      <img src="6.png" alt="Page 6">
+      <img src="7.png" alt="Page 7">
+      <img src="8.png" alt="Page 8">
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="grid">
+    <!-- Bloc infos perso -->
+    <div class="card">
+      <p><b>Localisation :</b> Bures-sur-Yvette (91440) / Paris (75013) </p>
+      <p><b>Téléphone :</b> 07 62 63 51 10</p>
+      <p><b>Email :</b> <a href="mailto:chloe.greffier@universite-paris-saclay.fr">chloe.greffier@universite-paris-saclay.fr</a></p>
+      <p><b>Email :</b> <a href="mailto:chloe_greffier@outlook.com">chloe_greffier@outlook.com</a></p>
+    </div>
+    <!-- Bloc liens -->
+    <div class="card">
+      <p><b>LinkedIn :</b> <a href="https://www.linkedin.com/in/chloegreffier">Profil LinkedIn</a></p>
+      <p><b>GitHub :</b> <a href="https://github.com/ChloeGREFFIER">Mon GitHub</a></p>
+      <p><b>CV :</b> <a href="CV_Chloe_GREFFIER.pdf" download>Télécharger mon CV</a></p>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Ajustements pour les cartes contact */
+#contact .card {
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 10px;
+}
+#contact .card a {
+  color: #ff4da6;
+  text-decoration: none;
+}
+#contact .card a:hover {
+  text-decoration: underline;
+}
+</style>
+
+<footer> 2026 - Chloé Greffier - Universite Paris Saclay </footer>
+
+</body>
+</html>
