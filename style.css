@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;400;600;700&display=swap');
+
+/* RESET GLOBAL */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+/* NAVIGATION */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 10%; 
+  border-bottom: 1px solid #222;
+  z-index: 1000;
+}
+
+nav img {
+  height: 40px;
+  margin-right: 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: #ffd633;
+  text-shadow: 0 0 8px #ffd633;
+}
+
+
+
+
+
+/* HEADER */
+header {
+  padding: 120px 10% 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.header-text h1 {
+  font-family: 'Press Start 2P';
+  font-size: 44px;
+  color: #4da6ff;
+}
+
+.header-text p {
+  font-size: 18px;
+  color: #ff4da6;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 5px solid #ffd633;
+  object-fit: cover;
+}
+
+
+
+
+
+/* SECTIONS*/
+section {
+  padding: 60px 0;      /* plus de padding horizontal sur 10%, juste 0 ou un fixe */
+  width: 100%;           /* s’étend sur toute la largeur */
+}
+
+section .grid {
+  max-width: 1350px;     /* largeur max pour centrer tout */
+  margin: 0 auto;        /* centre la grille */
+  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+section .photo-gallery  {
+  max-width: 1350px;     /* largeur max pour centrer tout */
+  margin: 0 auto;        /* centre la grille */
+  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+section .photo  {
+  max-width: 1350px;     /* largeur max pour centrer tout */
+  margin: 0 auto;        /* centre la grille */
+  gap: 30px;
+  display: grid;
+}
+
+section p,
+section ul,
+section .card {
+  width: 100%;           /* assure que tout prend toute la largeur de la grid */
+}
+section h2 {
+  max-width: 1350px;
+  margin: 0 auto 30px auto; /* centre horizontalement mais garde le bottom margin */
+}
+
+h2 {
+  font: 30px 'Press Start 2P';
+  color: #ffd633;
+}
+
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 30px;
+  margin-top: 30px;
+}
+
+
+/* CARDS */
+.card {
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* TAG */
+.tag {
+  display: inline-block;
+  background: #ff4da6;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+
+
+/* SKILLS */
+.skill {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill li {
+  margin: 5px 0;
+}
+
+.skill li::before {
+  content: "●";
+  color: #ff4da6;
+  margin-right: 8px;
+}
+
+/* PROJETS */
+.project-details {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.toggle-arrow {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #ff4da6;
+  transition: transform .3s;
+}
+
+
+/* GALERIE */
+.photo-gallery {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #ffd633;
+}
+
+.slide-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: slide 50s linear infinite;
+}
+
+.photo-gallery img {
+  width: 480px;
+  height: 270px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+@keyframes slide {
+  to { transform: translateX(-50%); }
+}
+
+/* CONTACT */
+#contact a {
+  color: #ff4da6;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  padding: 20px;
+}
